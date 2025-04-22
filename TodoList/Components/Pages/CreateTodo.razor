@@ -1,0 +1,27 @@
+﻿@page "/create"
+@inject TodoService TodoService
+@inject NavigationManager Navigation
+
+<h3>Create New Todo</h3>
+
+<div>
+    <label>Title:</label>
+    <input @bind="NewTodo.Title" />
+</div>
+
+<div>
+    <label>Description:</label>
+    <input @bind="NewTodo.Description" />
+</div>
+
+<button @onclick="CreateTodo">Create</button>
+
+@code {
+    private CreateTodoDto NewTodo = new();
+
+    private async Task CreateTodo()
+    {
+        await TodoService.CreateTodoAsync(NewTodo);
+        Navigation.NavigateTo("/todos"); // Redirect after creating
+    }
+}

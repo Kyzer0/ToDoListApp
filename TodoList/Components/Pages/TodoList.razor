@@ -1,0 +1,64 @@
+﻿@page "/todos"
+@inject TodoService TodoService
+@inject NavigationManager Navigation
+
+<h3>Todo List</h3>
+
+@if (Todos == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Completed</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var todo in Todos)
+            {
+                <tr>
+                    <td>@todo.Title</td>
+                    <td>@todo.Description</td>
+                    <td><input type="checkbox" checked="@todo.IsCompleted" disabled /></td>
+                    <td>
+                        <button @onclick="() => EditTodo(todo.Id)">Edit</button>
+                        <button @onclick="() => DeleteTodo(todo.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<button @onclick="NavigateToCreate">Create New Task</button>
+
+@code {
+    private List<TodoResponseDto>? Todos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Todos = await TodoService.GetTodosAsync();
+    }
+
+    private async Task DeleteTodo(Guid id)
+    {
+        await TodoService.DeleteTodoAsync(id);
+        Todos = await TodoService.GetTodosAsync(); // Refresh list
+    }
+
+    private void EditTodo(Guid id)
+    {
+        Navigation.NavigateTo($"/edit/{id}");
+    }
+
+    private void NavigateToCreate()
+    {
+        Navigation.NavigateTo("/create");
+    }
+}

@@ -1,0 +1,51 @@
+﻿@page "/edit/{id:guid}"
+@inject TodoService TodoService
+@inject NavigationManager Navigation
+
+<h3>Edit Todo</h3>
+
+@if (Todo == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div>
+        <label>Title:</label>
+        <input @bind="Todo.Title" />
+    </div>
+
+    <div>
+        <label>Description:</label>
+        <input @bind="Todo.Description" />
+    </div>
+
+    <div>
+        <label>Completed:</label>
+        <input type="checkbox" @bind="Todo.IsCompleted" />
+    </div>
+
+    <button @onclick="UpdateTodo">Save Changes</button>
+}
+
+@code {
+    [Parameter] public Guid id { get; set; }
+    private UpdateTodoDto? Todo;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var existingTodo = await TodoService.GetTodoByIdAsync(id);
+        Todo = new UpdateTodoDto
+            {
+                Title = existingTodo.Title,
+                Description = existingTodo.Description,
+                IsCompleted = existingTodo.IsCompleted
+            };
+    }
+
+    private async Task UpdateTodo()
+    {
+        await TodoService.UpdateTodoAsync(id, Todo);
+        Navigation.NavigateTo("/todos");
+    }
+}
