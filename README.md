@@ -1,7 +1,3 @@
-# My ASP.NET Core Web API Projects
-
-This repository contains a collection of ASP.NET Core Web API projects designed to showcase my skills in building RESTful services.
-
 ## Projects Overview
 
 1.  **Task Management API**
@@ -21,15 +17,15 @@ These steps are a general guide.  Specific project requirements may vary, so ref
 
 ### Prerequisites
 
-* [.NET SDK](https://dotnet.microsoft.com/download) (Specify the minimum required version, e.g., .NET 6 or later)
-* (Optional) A database management tool (e.g., [SQLite Browser](https://sqlitebrowser.org/), [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)) if you want to directly inspect the databases.
+* [.NET SDK](https://dotnet.microsoft.com/download) (Required .Net 6 above)
+*  A database management tool [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)) if you want to directly inspect the databases.
 
 ### Installation
 
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone [https://github.com/Kyzer0/ToDoListApp/]
     ```
 
 2.  Navigate to the project directory:
@@ -101,7 +97,7 @@ These steps are a general guide.  Specific project requirements may vary, so ref
 For Example:
 ### Running Unit Tests (for Task Management API)
 
-1.  Navigate to the test project directory ( `cd TaskManagementAPI.Tests`).
+1.  Navigate to the test project directory ( `cd TestTodoApp.csproj`).
 2.  Run the tests:
 
     ```bash
