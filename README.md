@@ -1,6 +1,6 @@
 # My ASP.NET Core Web API Projects
 
-This repository contains a collection of ASP.NET Core Web API projects designed to showcase my skills in building RESTful services. Each project demonstrates different aspects of API development, from basic CRUD operations to more advanced concepts like authentication, data relationships, and integration with external APIs.
+This repository contains a collection of ASP.NET Core Web API projects designed to showcase my skills in building RESTful services.
 
 ## Projects Overview
 
@@ -15,7 +15,7 @@ This repository contains a collection of ASP.NET Core Web API projects designed 
     * **Key Skills Demonstrated:** RESTful API design, database integration, CRUD operations.
 
 
-## General Setup Instructions (Applicable to all projects)
+
 
 These steps are a general guide.  Specific project requirements may vary, so refer to the project-specific sections for any deviations.
 
