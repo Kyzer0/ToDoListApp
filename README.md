@@ -3,7 +3,7 @@
 1.  **Task Management API**
 
     * **Description:** A RESTful API for managing tasks or to-do lists. Users can create, read, update, and delete tasks, assign priorities, set due dates, and mark tasks as completed.
-    * **Technologies:** ASP.NET Core, Entity Framework Core (SQLite/SQL Server), (Optional) ASP.NET Core Identity.
+    * **Technologies:** ASP.NET Core, Entity Framework Core (SQLite/SQL Server).
     * **Features:**
         * CRUD operations for tasks.
         * Filtering tasks by status, priority, or due date.
