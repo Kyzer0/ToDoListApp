@@ -5,15 +5,15 @@ namespace Services.BussinessLogicFolder
 {
     public class TodoBussinessLogic : ITodoInterface<TodoItem>
     {
-        private readonly List<TodoItem> _items = new();
+        private readonly List<TodoItem> _items = new(); //creating new object
 
         public void AddTask(TodoItem item)
         {
             if (item == null)
-                throw new ArgumentNullException(nameof(item));
+                throw new ArgumentNullException($"{nameof(item)} Cannot be null");
             
 
-            var newId = Guid.NewGuid();
+            var newId = Guid.NewGuid(); //new id
             item.Id = newId;
              _items.Add(item);
         }
@@ -22,7 +22,9 @@ namespace Services.BussinessLogicFolder
         {
             if (id == Guid.Empty)
                 throw new ArgumentException("ID cannot be Empty");
+
             var item = _items.FirstOrDefault(x => x.Id == id);
+
             if (item == null)
                 throw new ArgumentException($"{nameof(TodoItem)} not found");
 
@@ -49,12 +51,14 @@ namespace Services.BussinessLogicFolder
                 throw new ArgumentNullException(nameof(updatedItem));
 
             var existingItem = _items.FirstOrDefault(x => x.Id == id);
+
             if (existingItem == null)
                 throw new ArgumentException($"{nameof(TodoItem)} not found");
 
-                existingItem.Title = updatedItem.Title;
-                existingItem.Description = updatedItem.Description;
-                existingItem.IsCompleted = updatedItem.IsCompleted;
+            //updated value
+            existingItem.Title = updatedItem.Title;
+            existingItem.Description = updatedItem.Description;
+            existingItem.IsCompleted = updatedItem.IsCompleted;
         }
 
     }
