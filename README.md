@@ -1,4 +1,4 @@
-## Projects Overview
+7## Projects Overview
 
 1.  **Task Management API**
 
@@ -92,9 +92,8 @@ These steps are a general guide.  Specific project requirements may vary, so ref
 
 
 ## Testing
+[I added a basic testing here so you guys can check if methods are working]
 
-[If you have unit tests for your projects, describe how to run them here.  Specify which projects have tests. If none of your projects have tests, you can remove this section or leave it commented out.\]
-For Example:
 ### Running Unit Tests (for Task Management API)
 
 1.  Navigate to the test project directory ( `cd TestTodoApp.csproj`).
